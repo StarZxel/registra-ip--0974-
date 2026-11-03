@@ -1,23 +1,80 @@
-:root { 
-  /* Colors */
-  --primary-color: #600974;
-  --secondary-color: #600954;
-  --backgroundcolor: #FFFFFF;
-  --text-color: #000000;
-  
-  /* Tipografia */
-  --font-family: 'Arial', Tahoma, Geneva, Verdana, sans-serif;
+:root {
+  /* 
+    PERSONALIZACIÓN - Boleta terminada en #600974
+    Color primario: #600974 (Morado oscuro)
+    Contraste WCAG AA sobre fondo blanco (#ffffff): SÍ CUMPLE.
+    Teoría del color: Al ser un tono con un valor de oscuridad alto (baja luminancia), 
+    genera una gran diferencia de contraste frente al fondo blanco puro 
+    (que refleja el máximo de luz). Esto supera la relación mínima 
+    exigida de 4.5:1, garantizando una excelente legibilidad y accesibilidad visual.
+  */
+  --color-primario: #600974;
+  --color-primario-hover: #4d075c;
 
-  /* Espaciado */ 
+  /* Colores generales de apoyo */
+  --color-fondo: #f8fafc;
+  --color-texto: #1e293b;
+
+  /* Tipografía base */
+  --tipografia-base: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+
+  /* Espaciados */
   --espaciado-sm: 8px;
   --espaciado-md: 16px;
   --espaciado-lg: 24px;
 }
 
 body {
-  font-family: var(--font-family);
-  background-color: var(--backgroundcolor);
-  color: var(--text-color);
+  font-family: var(--tipografia-base);
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
   margin: 0;
   padding: 0;
+}
+
+/* --- ESTILOS DEL FORMULARIO Y CONTRASTE --- */
+
+/* Título principal del formulario */
+.registro-container h2,
+form h2,
+h2 {
+  color: #1e293b; /* Texto oscuro para resaltar sobre blanco */
+  margin-bottom: 20px;
+}
+
+/* Estilos para las etiquetas */
+label {
+  color: #1e293b;
+  font-weight: 600;
+}
+
+/* Estilos para los campos de texto e inputs */
+input[type="text"],
+input[type="email"],
+select {
+  background-color: #ffffff; /* Fondo blanco */
+  color: #1e293b;            /* Texto oscuro legible */
+  border: 1px solid #cbd5e1;  /* Borde gris claro */
+  border-radius: 6px;
+  padding: 10px 12px;
+  font-size: 14px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Botón de registro */
+button[type="submit"],
+.btn-primary {
+  background-color: var(--color-primario, #600974);
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover,
+.btn-primary:hover {
+  background-color: var(--color-primario-hover, #4d075c);
 }
